@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags%}
+{% load static %}
+
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+{% endblock %} 
+
+{% block body_class %}{# empty to override #}{% endblock %}
+{% block content %}
+<!-- Top and Navbar -->
+<div class="container container-fluid jumbo-container">
+  <div class="jumbotron"></div>
+  {% include 'newsorg/navbar_top.html' %}
+</div>
+
+<!-- @component: content-body -->
+<div class="container container-fluid content-body">
+  <!-- Top row, main area and Side column -->
+  <div class="row">
+    <div class="col-md-9 main-area"> <!-- Main area -->      
+      <!-- Top row, main feature container and featured Category articles -->
+      <div class="row first-row"> 
+        <div class="col-md">                    
+            <!-- main Feature and follow up -->
+            {% include 'home/partials/mainfeature.html' %}                     
+        </div>                    
+      </div>
+      <!-- Second row, latest news from Minitrue and featured News carousel and Opinions & Blogs -->
+      <div class="row second-row"> 
+        <div class="col-md-6 minitrue">
+          <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->          
+          <!-- Latest News (Minitrue) -->
+          {% include 'home/partials/minitrue.html' %}
+        </div>
+        <div class="col-md-6 op-blog">                                   
+          <!-- Opinion & Blogs -->   
+          {% include "home/partials/carousel.html" with carousel_items=self.carousel_items.all only %}          
+        </div>            
+      </div>
+      <!-- Third row, older featured articles  -->
+      <div class="row third-row">
+          <div class="col-md published-features">
+              <div class="container-fluid"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->
+                <!-- Old features -->
+                {% include 'home/partials/published_features.html' %}
+              </div>
+          </div>
+      </div>      
+    </div><!-- end of main area -->
+    <!-- Side column, Category News container -->
+    <div class="col-md-3 side-column">        
+        <!-- Category news -->        
+        {% include 'home/partials/category_news.html' %}
+    </div>
+  </div> 
+{% endblock %}

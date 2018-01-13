@@ -1,0 +1,23 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+
+<div class="container-fluid"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->
+    {% for post in main_feature_article %}
+        {% with post=post.specific %}
+            <div class="row mainfeature-article">                  
+                <div class="col-md-7 mainfeature-pic">
+                    {% with post.main_image as main_image %}
+                        {% if main_image %}         
+                            {% image main_image height-300 as tmp_photo %}
+                            <a href="{% pageurl post %}"><img src="{{ tmp_photo.url }}" class="homepage-photo"/></a>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="col-md-5 mainfeature-text">
+                    <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+                    <p><a href="{% pageurl post %}">{{ post.intro }}</a></p>                
+                </div>
+            {% endwith %}
+        {% endfor %}                
+    </div>
+</div>
