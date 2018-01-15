@@ -1,0 +1,75 @@
+{% load static wagtailuserbar %}
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+                
+        {# Global stylesheets #}
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Hind+Siliguri|Merriweather|Open+Sans" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">    
+        <link rel="stylesheet" type="text/css" href="{% static 'newsorg/css/newsorg.css' %}">
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+        
+        
+        
+    </head>
+
+    <body>
+        {% wagtailuserbar %}
+
+        {% block content %}{% endblock %}
+        <!-- @component: footer -->
+        <div class="container">
+            <footer class="footer">
+                <p>&copy; Buckanjaren.se 2017</p>
+            </footer>
+        </div>
+    </div>
+        {# Global javascript #}       
+        <!-- jQuery (version: 2.1.4) via googleapis or path to local copy ie. plugins/jquery/jquery.min.js -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+        <!-- JQuery (version: 3.1.1) via jquery.com or path to local copy ie. plugins/jquery/jquery.min.js -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    
+        <!-- Tether plugin, needed for tooltip plugin -->
+        <!-- <script src="https://cdn.rawgit.com/HubSpot/tether/master/dist/js/tether.min.js"></script> -->
+        <!-- Tether plugin, needed for tooltip plugin -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap (version: v4.0.0-alpha.2) JS via MaxCDN or path to local copy ie. plugins/bootstrap/dist/js/bootstrap.min.js-->
+        <!-- <script src="https://cdn.rawgit.com/twbs/bootstrap/v4.0.0-alpha.2/dist/js/bootstrap.min.js"></script> -->
+        <!-- Bootstrap (version: v4.0.0-alpha.6) JS via MaxCDN or path to local copy ie. plugins/bootstrap/dist/js/bootstrap.min.js-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+                
+        <!-- newsorg javascript -->
+        <script type="text/javascript" src="{% static 'newsorg/js/newsorg.js' %}"></script>
+        
+        {% block extra_js %}
+        <!-- Custom Javascript -->    
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+
+        
+    </body>
+</html>

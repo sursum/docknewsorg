@@ -1,0 +1,28 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+
+<div class="container-fluid list-news-container"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->               
+    <div class="row">        
+        <div class="col-md">                
+            <div id="headline"><h3>nyheter</h3></div>
+            <ul class="list-group list-news-list yflow">
+                {% for post in minitrue %}
+                    {% with post=post.specific %}
+                        <li class="list-group-item list-news-list-item">                            
+                                <a href="{% pageurl post %}">                                    
+                                    {% with post.main_image as main_image %}                                
+                                        {% if main_image %}                                               
+                                            {% image main_image fill-60x40 as tmp_photo %}                                            
+                                                <img src="{{ tmp_photo.url }}"/>                                            
+                                        {% endif %}
+                                    {% endwith %}
+                                    <strong>{{ post.title }}</strong>
+                                    <p>{{ post.intro }}</p>
+                                </a>                            
+                        </li>
+                    {% endwith %}
+                {% endfor %}      
+            </ul>            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+
+<div class="container-fluid published-container"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->
+    <div id="headline"><h3>Publicerade Artiklar</h3></div>
+    {% for post in published_media %}
+        {% with post=post.specific %}
+        <div class="row published-row">                       
+            <div class="col-md-4">
+                {% with post.main_image as main_image %}
+                {% if main_image %}         
+                    {% image main_image height-180 as tmp_photo %}
+                        <img src="{{ tmp_photo.url }}" class="homepage-photo" alt=""/>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="col-md-8">
+                <a class="inline-block" href="{% pageurl post %}">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.intro }}</p>                
+                </a>
+            </div>            
+        </div>
+        {% endwith %}        
+    {% endfor %}  
+</div>

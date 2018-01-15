@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+{% include_block page.body %}
+
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+{% endblock %} 
+
+{% block body_class %}blogpage{% endblock %}
+
+{% block content %}
+<!-- Top and Navbar -->
+<div class="container container-fluid jumbo-container">
+    <div class="jumbotron"></div>
+    {% include 'newsorg/navbar_top.html' %}
+</div>
+<div class="container container-fluid content-body">
+    {# Top row, main area and Side column #}
+    <div class="row">
+        <div class="col-md blogpage-col">
+            <article>
+                
+                {% for block in page.body %}
+                    
+                    {% if block.block_type == 'heading' %}
+                        <h1>{{ block.value }}</h1>
+                    {% elif block.block_type == 'image' %}
+                        <section class="block-{{ block.block_type }}">                            
+                            <div class="row">
+                                <div class="col-md-4">
+                                    {% image block.value height-300 as blog_photo %}                                    
+                                    <img src="{{ blog_photo.url }}" class="homepage-photo"/>                                    
+                                </div>                                
+                                <div class="col-md-8">
+                                    {{ page.intro |richtext }}
+                                </div>
+                            </div>
+                            <div class="row">                                
+                                <div class="blogpage-author">                                    
+                                    {{ page.authors |richtext }}
+                                </div>                         
+                            </div>
+                        </section>
+                        <small>
+                                {{ page.date }}                                        
+                        </small>
+                    {% elif block.block_type == 'paragraph' %}
+                        <section class="block-{{ block.block_type }}">
+                            {{ block.value |richtext }}
+                        </section>
+                    {% elif block.block_type == 'articleIP' %}
+                        <section class="block-{{ block.block_type }}">
+                            <a href="{{ block.value }}" class="block-{{ block.block_type }}">Vill du veta mer?</a>
+                        </section>
+                        {% else %}
+                        <section class="block-{{ block.block_type }}">
+                            {% include_block block %}
+                        </section>
+                        
+                    {% endif %}
+                    
+                {% endfor %}
+                
+            </article>
+        </div>
+    </div>        
+</div>
+{% endblock %}

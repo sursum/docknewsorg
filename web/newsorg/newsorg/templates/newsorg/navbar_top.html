@@ -1,0 +1,41 @@
+{% load navbar_top %}
+{% load staticfiles %}
+
+
+<!-- Navigation -->
+<nav id="navigation" class="navbar navbar-dark main-navbar" data-toggle="sticky-onscroll">
+  <div class="container-fluid">
+  <div class="row menu-row">
+    <div class="col-md-6 menu-cat">
+      <ul class="pull-left main-menu">
+        {% get_categories as category_names %}
+        {% for cat in category_names %}
+          <li><a href="/categories/?category={{ cat }}">{{ cat }}</a> </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-4 menu-pirate">
+      <span class="show-not-sticky">
+        <a href="/">
+          <img id="navbar-not-sticky-logo" src="{% static 'newsorg/images/pirate-logo-banner-inv.png' %}">        
+        </a>
+      </span>
+      <span class="show-is-sticky">
+        <a href="/" >
+          <img id="navbar-sticky-logo" src="{% static 'newsorg/images/buc_banner.png' %}">
+        </a>
+      </span>
+    </div>
+    <div class="col-md-auto menu-pp">    
+      <span class="show-is-sticky">
+        <a href="http://www.piratpartiet.se" >
+          <img id="navbar-sticky-logo" src="{% static 'newsorg/images/80px-Piratpartiet.purple.png' %}">
+        </a>
+      </span>  
+      <span class="show-not-sticky">
+          <a class="menu-pp-text" href="http://www.piratpartiet.se">Piratpartiet</a>
+      </span>                  
+    </div>
+  </div>
+  </div>
+</nav>   
