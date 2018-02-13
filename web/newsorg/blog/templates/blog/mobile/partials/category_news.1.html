@@ -4,8 +4,8 @@
 <div class="container-fluid list-news-container"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->               
     <!-- cat_pol -->
     <div class="row list-news-row">        
-        <div class="col-md">                
-            <div id="headline"><h3>politik</h3></div>
+        <div class="col-sm">                
+            <div id="headline"><strong>politik</strong></div>
             <ul class="list-group list-news-list yflow">
                 {% for post in cat_pol %}
                     {% with post=post.specific %}
@@ -23,8 +23,8 @@
     <div class="annons"></div>
     <!-- cat_econ -->
     <div class="row list-news-row">        
-        <div class="col-md list-news-col">                
-            <div id="headline"><h3>ekonomi</h3></div>
+        <div class="col-sm list-news-col">                
+            <div id="headline"><strong>ekonomi</strong></div>
             <ul class="list-group list-news-list yflow">
                 {% for post in cat_econ %}
                     {% with post=post.specific %}
@@ -42,8 +42,8 @@
     <div class="annons"></div>
     <!-- cat_cult -->
     <div class="row list-news-row">        
-        <div class="col-md list-news-col">                
-            <div id="headline"><h3>kultur</h3></div>
+        <div class="col-sm list-news-col">                
+            <div id="headline"><strong>kultur</strong></div>
             <ul class="list-group list-news-list yflow">
                 {% for post in cat_cult %}
                     {% with post=post.specific %}
@@ -61,8 +61,8 @@
     <div class="annons"></div>
     <!-- cat_sci -->
     <div class="row list-news-row">        
-        <div class="col-md list-news-col">                
-            <div id="headline"><h3>vetenskap</h3></div>
+        <div class="col-sm list-news-col">                
+            <div id="headline"><strong>vetenskap</strong></div>
             <ul class="list-group list-news-list yflow">
                 {% for post in cat_sci %}
                     {% with post=post.specific %}
@@ -80,8 +80,8 @@
     <div class="annons"></div>
     <!-- cat_health -->
     <div class="row list-news-row">        
-        <div class="col-md list-news-col">                
-            <div id="headline"><h3>hälsa</h3></div>
+        <div class="col-sm list-news-col">                
+            <div id="headline"><strong>hälsa</strong></div>
             <ul class="list-group list-news-list yflow">
                 {% for post in cat_health %}
                     {% with post=post.specific %}

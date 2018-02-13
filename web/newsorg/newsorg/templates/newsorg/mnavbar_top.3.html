@@ -1,0 +1,61 @@
+{% load navbar_top %}
+{% load staticfiles %}
+
+
+<!-- Navigation -->
+<div id="mmain-navbar">
+    <div class="contaner">
+    <nav class="navbar navbar-toggleable-xs navbar-light">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            {% get_categories as category_names %}
+            {% for cat in category_names %}
+              <a class="dropdown-item" href="/categories/?category={{ cat }}">{{ cat }}</a>
+            {% endfor %}   
+
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Navigation -->
+    <nav id="navigation" class="navbar-nav navbar-dark mmain-navbar" data-toggle="sticky-onscroll">
+      <div class="container-fluid">
+        <div class="row menu-row">
+          <div class="col-sm menu-cat">
+              <div class="dropdown dropdown-menu-right">
+                  <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown link
+                  </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% get_categories as category_names %}
+                {% for cat in category_names %}
+                  <a class="dropdown-item" href="/categories/?category={{ cat }}">{{ cat }}</a>
+                {% endfor %}              
+              </div>
+            </div>          
+          </div>      
+        </div>
+      </div>
+    </nav>   
+  </div>
+</div>

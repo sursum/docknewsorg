@@ -24,8 +24,11 @@
                 </div>
           {% else %}
             {# Carousel image - first store image as a variable in order to construct an image tag with a title applied (title is used by bxslider js to construct the caption) #}
-            {% image carousel_item.image fill-680x450 as carouselimagedata %}            
-              <img class="d-block img-fluid" src="{{ carouselimagedata.url }}" style="width: 100%;" alt="{{ carouselimagedata.alt }}" />            
+            {% image carousel_item.image width-500 as carouselimagedata %}   
+            <div class="fill img-fluid carousel-image" style="background-image:url('{{ carouselimagedata.url }}');" alt="{{ carouselimagedata.alt }}" />
+            <div class="carousel-caption">
+     
+              <img class="d-block img-fluid carousel-image" src="{{ carouselimagedata.url }}" style="width: 100%;" alt="{{ carouselimagedata.alt }}" />            
           {% endif %}
           {% if carousel_item.caption or carousel_item.link %}
             <div class="carousel-caption d-none d-md-block">
