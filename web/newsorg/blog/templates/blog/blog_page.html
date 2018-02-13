@@ -19,7 +19,7 @@
 <div class="container container-fluid content-body">
     {# Top row, main area and Side column #}
     <div class="row">
-        <div class="col-md blogpage-col">
+        <div class="col-sm col-md blogpage-col">
             <article>
                 
                 {% for block in page.body %}
@@ -29,11 +29,11 @@
                     {% elif block.block_type == 'image' %}
                         <section class="block-{{ block.block_type }}">                            
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-sm col-md-4">
                                     {% image block.value height-300 as blog_photo %}                                    
                                     <img src="{{ blog_photo.url }}" class="homepage-photo"/>                                    
                                 </div>                                
-                                <div class="col-md-8">
+                                <div class="col-sm col-md-8">
                                     {{ page.intro |richtext }}
                                 </div>
                             </div>

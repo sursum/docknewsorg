@@ -1,13 +1,48 @@
+#post-headline {
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+}
+.scrollingdiv{
+    -webkit-overflow-scrolling: touch; 
+}
+.container, .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+}
 .content-body {
+    margin-top: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
     border-left: 2px solid #4B3296;
-    border-right: 2px solid #4B3296;
-    border-radius: 5px;
+    border-right: 2px solid #4B3296;    
+    padding-top: 0px;  
+    padding-left: 5px;
+    padding-right: 5px;        
+}
+.mmenu-text {
+    font-size: 0.75em;
+    font-family: -apple-system,BlinkMacSystemFont, "Helvetica Neue",Helvetica,'Fira Sans',"Open Sans",Arial,sans-serif;
+}
+.navbar-row {
+    min-height: 44px;
+    margin-bottom: 4px;
+}
+.homepage-row {
+    margin: 0px;    
 }
 .main-area {
     border-right: 2px solid orange;
 }
-.second-row {
-    max-height: 265px;
+.post-row {
+    margin-bottom: 8px;
+    max-height: 120px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.mainfeatur-home-col {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .second-row-container {
     margin-bottom: 5px;
@@ -23,27 +58,45 @@
     padding-bottom: 10px;
 }
 
-.homepage-photo {
-    max-width: 100%;    
+img.homepage-photo {
+    max-width: 100%;   
+    padding-right: 5px; 
 }
 .mainfeature-article {
+    display: inline-block;
     padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 2px solid orange;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-bottom: 2px solid orange;    
 }
-.mainfeature-pic {
-    border-right: 1px solid #4B3296;
+.mainfeature-post {
+    display: inline-block;
+    margin: 0px;
+    padding: 3px;        
+    overflow-wrap: break-word;
 }
-
+.mainfeature-post p {
+    margin: 0px;
+    
+}
+.mainfeature-cont {
+    padding-left: 0px;
+    padding-right: 0px;    
+}
 .minitrue  {
     padding-left: 10px;
     padding-right: 10px;    
+    margin-top: 15px;
 }
 .list-news-container {
     padding-left: 5px;
     padding-right: 5px;    
 }
 .list-news-container h3 {    
+    margin-top: 4px;
     display: block;
     /*background-color: #4B3296; */
     text-align: center;
@@ -94,14 +147,29 @@
 }
 .list-news-list-item strong, .list-news-list-item  p {
     margin-bottom: 0.2rem;
-    overflow-y: auto;    
-    font-size: 1vw;    
+    overflow-y: auto;            
     white-space: nowrap;         
     overflow-x: hidden;
     text-overflow: ellipsis;        
 }
 
-
+/* OP-Blog */
+.op-blog {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.slide {
+    box-sizing: content-box;
+}
+.carousel-image {
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 /* PUBLISHED FEATURES */
 .published-features {
     padding-top: 5px;
@@ -117,6 +185,8 @@
 .published-row {
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
     border-bottom: 1px solid #4B3296; 
 }
 
@@ -135,3 +205,8 @@
     padding: 0;
     overflow: hidden;
 }
+
+
+.bg-company-red {
+    background-color: darkred;
+  }

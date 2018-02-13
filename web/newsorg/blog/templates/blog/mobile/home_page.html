@@ -1,0 +1,51 @@
+{% load static %}
+{% load user_agents %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/mhome.css' %}"> 
+{% endblock %} 
+
+{% block body_class %}{# empty to override #}{% endblock %}
+{% block content %}
+<!-- @component: content-body -->
+<div class="content-body container">
+  <div class="row navbar-row">     
+        <!-- main Feature and follow up -->
+        {% include 'newsorg/mnavbar_top.html' %}    
+  </div>
+  <div class="row homepage-row"> 
+    <div class="col-md">                    
+        <!-- main Feature and follow up -->
+        {% include 'blog/pc/partials/mainfeature.html' %}                     
+    </div>                    
+  </div>
+  <!-- Second row, latest news from Minitrue and featured News carousel and Opinions & Blogs -->
+  <div class="row homepage-row"> 
+    <div class="col-md minitrue">
+      <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->          
+      <!-- Latest News (Minitrue) -->
+      {% include 'blog/pc/partials/minitrue.html' %}
+    </div>
+  </div>
+  <div class="row homepage-row">
+    <div class="col-md op-blog">                                   
+      <!-- Opinion & Blogs -->   
+      {% include "blog/pc/partials/carousel.html" with carousel_items=self.carousel_items.all only %}          
+    </div>            
+  </div>
+  <!-- Third row, older featured articles  -->
+  <div class="row homepage-row">
+      <div class="col-md published-features">
+          <div class="container-fluid"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->
+            <!-- Old features -->
+            {% include 'blog/pc/partials/published_features.html' %}
+          </div>
+      </div>
+  </div>      
+  <!-- Category News container -->
+  <div class="col-md homepage-row">        
+      <!-- Category news -->        
+      {% include 'blog/pc/partials/category_news.html' %}
+  </div>
+</div>
+{% endblock %}

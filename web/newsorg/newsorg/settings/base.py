@@ -23,7 +23,7 @@ WAGTAIL_SITE_NAME = "newsorg"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://buckanjaren.com'
+BASE_URL = 'http://buckanjaren.se'
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'newsorg',    
     'search',
     'blog',
-
+    
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
     'wagtail.wagtailembeds',
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
+    'django_user_agents',    
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -77,9 +78,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-
+    
     'wagtail.wagtailcore.middleware.SiteMiddleware',
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+    
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'newsorg.urls'
@@ -89,6 +92,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(PROJECT_DIR, 'templates'),
+            os.path.join(PROJECT_DIR, 'templates/pc'),
+            os.path.join(PROJECT_DIR, 'templates/pc'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -97,7 +102,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+            ],            
         },
     },
 ]
@@ -172,3 +177,15 @@ LOGGING = {
         },
     },
 } 
+
+# # Cache backend is optional, but recommended to speed up user agent parsing
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': '127.0.0.1:11211',
+#     }
+# }
+
+# # Name of cache backend to cache user agents. If it not specified default
+# # cache alias will be used. Set to `None` to disable caching.
+# USER_AGENTS_CACHE = 'default'

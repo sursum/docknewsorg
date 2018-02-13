@@ -1,40 +1,8 @@
-/* ==================================================
-  Home Page
-================================================== */
-/*#headline {
-    background: #4B3296; /* For browsers that do not support gradients */
-    /* background: -webkit-linear-gradient( #4B3296 , orange); /* For Safari 5.1 to 6.0 */
-    /* background: -o-linear-gradient( #4B3296, orange); /* For Opera 11.1 to 12.0 */
-    /* background: -moz-linear-gradient( #4B3296, orange); /* For Firefox 3.6 to 15 */
-    /* background: linear-gradient( #4B3296 , orange); /* Standard syntax */
-/*}*/
-
-/*.jumbo-container {
-    padding-top: 0px;
-    padding-bottom: 10px; 
-    padding-left: 0px;
-    padding-right: 0px;
-    border-bottom: 3px solid orange;
-}
 .content-body {
-    margin-top: 10px;
-    padding-top: 10px;        
     border-left: 2px solid #4B3296;
     border-right: 2px solid #4B3296;
     border-radius: 5px;
-  }
-
-.jumbotron{    
-    background: url("../images/bucmain-FULL.jpg") no-repeat center center;
-    -webkit-background-size: 100% 100%;    
-    background-size: 100% 100%;
-    min-height: 230px;
-    margin-bottom: 0px; 
-    padding: 0px 15px;         
-} 
-.container .jumbotron, .container-fluid .jumbotron {
-    border-radius: 0px;
-}*/
+}
 .main-area {
     border-right: 2px solid orange;
 }

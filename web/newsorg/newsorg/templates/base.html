@@ -7,9 +7,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Buckanjaren" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>
             {% block title %}
@@ -24,7 +25,7 @@
                 
         {# Global stylesheets #}
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Hind+Siliguri|Merriweather|Open+Sans" rel="stylesheet"> 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'newsorg/css/newsorg.css' %}">
 
         {% block extra_css %}
@@ -36,17 +37,18 @@
     </head>
 
     <body>
-        {% wagtailuserbar %}
+        <div class="base">
+            {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
-        <!-- @component: footer -->
-        <div class="container">
-            <footer class="footer">
-                <p>&copy; Buckanjaren.se 2017</p>
-            </footer>
+            {% block content %}{% endblock %}
+            <!-- @component: footer -->
+            <!-- <div class="container-fluid">
+                <footer class="footer">
+                    <p>&copy; Buckanjaren.se 2017</p>
+                </footer>
+            </div> -->
         </div>
-    </div>
-        {# Global javascript #}       
+        {# Global javascript #}      
         <!-- jQuery (version: 2.1.4) via googleapis or path to local copy ie. plugins/jquery/jquery.min.js -->
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
         <!-- JQuery (version: 3.1.1) via jquery.com or path to local copy ie. plugins/jquery/jquery.min.js -->

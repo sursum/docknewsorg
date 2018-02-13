@@ -1,0 +1,62 @@
+
+/* ==================================================
+  Mobile device navbar
+================================================== */
+.navbar-brand {
+    padding: 0px;
+}
+
+#logotype > img {
+    height: 2.2em;
+}
+
+.navbar-nav {
+    background: #4B3296;
+}
+
+.mbuc-button {
+    padding: 4px;
+}
+
+.navbar { 
+    display: flex;
+    
+ }
+.navbar {
+    width:100%; 
+    padding: 0px;
+    /*background: #4B3296;*/
+    
+
+    @media(max-width: 34em) {
+    background: #4B3296; !important;
+    }
+        
+    .navbar-toggler {
+        cursor:pointer;
+        outline:0;        
+    }
+
+    .nav-link {
+        text-transform:uppercase;
+        font-weight:bold;
+    }
+
+    .nav-item {
+        padding: 0 1rem;
+
+        @media(max-width: 34em) {
+            padding: 0;
+        }
+
+        .nav-link {
+            @media(max-width: 34em) {
+                font-weight:normal;
+                color:#fff !important;
+            }
+        }
+    }
+    .nav-butt {
+     border-color: orange;
+ }
+}
