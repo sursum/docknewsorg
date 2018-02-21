@@ -1,42 +1,61 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
+{% load user_agents %}
 
 
 {% block extra_css %}
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/mhome.css' %}">
 {% endblock %} 
 
 {% block body_class %}blogcategoryindexpage{% endblock %}
 
 {% block content %}
     <!-- Top and Navbar -->
+    {% if request|is_pc %}
     <div class="container container-fluid jumbo-container">
         <div class="jumbotron"></div>
         {% include 'newsorg/navbar_top.html' %}
+    </div>    
+    {% endif %}
+
+    {% if request|is_mobile %}
+    <div class="row navbar-row">     
+            <!-- main Feature and follow up -->
+            {% include 'newsorg/mnavbar_top.html' %}    
     </div>
-    <div class="container container-fluid content-body">
-        <!-- Top row, main area and Side column -->
-        <div class="row">
-            <div class="col-md category-index-col"> 
-                {% if request.GET.category|length %}
-                    <h4>Visar artiklar i kategorin "{{ request.GET.category }}"</h4>
-                {% endif %}
-                
-                <ul>                        
-                    {% for blogpage in blogpages %}
-                        <li class="category-index-li"><a href="{% pageurl blogpage %}">
+    {% endif %}
+
+    <div class="row category-row">
+        <div class="col-md"> 
+            {% if request.GET.category|length %}
+                <h4>Visar artiklar i kategorin "{{ request.GET.category }}"</h4>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row category-row">        
+        <div class="col-sm">                
+            <ul class="list-group">                        
+                {% for blogpage in blogpages %}
+                {% with post=post.specific %}                
+                <li class="category-index-li">
+                    <article>
+                        <a href="{% pageurl blogpage %}">
                             {% with blogpage.main_image as main_image %}
                                 {% if main_image %}
-                                    {% image main_image fill-160x100 %}
+                                    {% image main_image fill-160x100 as tmp_photo %}
+                                    <img class="img-fluid" src="{{ tmp_photo.url }}"/>
                                 {% endif %}
                             {% endwith %}
-                            <strong>{{ blogpage.title }}</strong><br/>                        
+                            <strong style="text-align: center">{{ blogpage.title }}</strong>
                             <p>{{ blogpage.intro }}</p>
-                        </a></li>
-                    {% endfor %}
-                </ul>             
-            </div>
+                        </a>
+                    </article>
+                </li>                
+                {% endwith %}
+                {% endfor %}
+            </ul>     
         </div>
     </div>
 {% endblock %}

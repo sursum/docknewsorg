@@ -12,7 +12,7 @@
                                 <a href="{% pageurl post %}">                                    
                                     {% with post.main_image as main_image %}                                
                                         {% if main_image %}                                               
-                                            {% image main_image fill-60x40 as tmp_photo %}                                            
+                                            {% image main_image fill-100x60 as tmp_photo %}                                            
                                                 <img src="{{ tmp_photo.url }}"/>                                            
                                         {% endif %}
                                     {% endwith %}

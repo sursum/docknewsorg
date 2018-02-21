@@ -11,16 +11,30 @@
 }
 
 .navbar-nav {
-    background: #4B3296;
+    background: #4B3296;    
 }
+.mmenu-link {
+    width: 100%;
+}
+.mmenu-link,
+a.nav-link.nav-item.mmenu-link, 
+#navbarSupportedContent > a:visited, 
+#navbarSupportedContent > a:hover, 
+#navbarSupportedContent > a:active  {
+    padding-left: 8px;
+    color:#fbf8f8;
+    border-bottom: 1px solid darkred;
+}
+
 
 .mbuc-button {
-    padding: 4px;
+    padding: 4px;    
 }
-
+.nav-butt {
+    border-color: orange;
+}
 .navbar { 
-    display: flex;
-    
+    display: flex;  
  }
 .navbar {
     width:100%; 
@@ -43,7 +57,7 @@
     }
 
     .nav-item {
-        padding: 0 1rem;
+        padding: 0 1rem;        
 
         @media(max-width: 34em) {
             padding: 0;
@@ -52,11 +66,9 @@
         .nav-link {
             @media(max-width: 34em) {
                 font-weight:normal;
-                color:#fff !important;
+                color:#fbf8f8 !important;
             }
         }
-    }
-    .nav-butt {
-     border-color: orange;
+    }    
  }
 }

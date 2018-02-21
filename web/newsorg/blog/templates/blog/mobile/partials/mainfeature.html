@@ -9,9 +9,11 @@
                     {% with post.main_image as main_image %}
                         {% if main_image %}         
                             {% image main_image width-160 as tmp_photo %}
-                            <a href="{% pageurl post %}"><img style="float: left" class="homepage-photo" src="{{ tmp_photo.url }}"/>                               
-                            <strong style="text-align: center">{{ post.title }}</strong><p>{{ post.intro }}</p>
-                            </a>
+                            <article>
+                                <a href="{% pageurl post %}"><img style="float: left" class="homepage-photo" src="{{ tmp_photo.url }}"/>                               
+                                <strong style="text-align: center">{{ post.title }}</strong><p >{{ post.intro }}</p>
+                                </a>
+                            </article>
                         {% endif %}
                     {% endwith %}
                 </div>

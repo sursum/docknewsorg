@@ -1,28 +1,35 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 
-<div class="container-fluid list-news-container"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->               
+<div class="container list-news-container"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->               
     <div class="row">        
         <div class="col-sm">                
             <div id="headline"><strong>nyheter</strong></div>
+        </div>
+    </div>
+    <div class="row">                       
+        <div class="col-sm">                 
             <ul class="list-group list-news-list yflow">
                 {% for post in minitrue %}
                     {% with post=post.specific %}
-                        <li class="list-group-item list-news-list-item">                            
-                                <a href="{% pageurl post %}">                                    
-                                    {% with post.main_image as main_image %}                                
-                                        {% if main_image %}                                               
-                                            {% image main_image fill-60x40 as tmp_photo %}                                            
-                                                <img src="{{ tmp_photo.url }}"/>                                            
-                                        {% endif %}
-                                    {% endwith %}
-                                    <div id="post-headline">{{ post.title }}</div>
-                                    <p>{{ post.intro }}</p>
-                                </a>                            
-                        </li>
+                    <li class="list-group-item list-news-list-item minitrue-post">
+                        <article>
+                        {% with post.main_image as main_image %}
+                        {% if main_image %}         
+                            {% image main_image width-100 as tmp_photo %}
+                                <a href="{% pageurl post %}"><img style="float: left" class="homepage-photo" src="{{ tmp_photo.url }}"/>
+                                </a>
+                        {% endif %}
+                        {% endwith %}
+                        <a href="{% pageurl post %}">                                                                    
+                            <strong>{{ post.title }}</strong>
+                            <p>{{ post.intro }}</p>
+                        </a>     
+                        </article>                       
+                    </li>
                     {% endwith %}
                 {% endfor %}      
-            </ul>            
+            </ul>                                          
         </div>
     </div>
 </div>

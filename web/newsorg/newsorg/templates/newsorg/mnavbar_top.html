@@ -10,26 +10,25 @@
     <div class="container">
         <div class="row">
            <nav class="navbar navbar-toggleable-md navbar-light fixed-top">
-               <div class="container-fluid mbuc-navbar">
-                    <a href="#" class="navbar-brand text-primary" id="logotype">
+               <div class="mbuc-navbar">
+                    <a href="http://127.0.0.1:8000" class="navbar-brand text-primary" id="logotype">
                         <img src="/static/newsorg/images/buc_banner.png" alt="Buckanjären">
                     </a>
                
-                <button class="nav-butt navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler navbar-toggler-right nav-butt" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         {% get_categories as category_names %}
                         {% for cat in category_names %}          
                         <li class="nav-item">
-                            <a class="nav-item nav-link mmenu-link" href="/categories/?category={{ cat }}"  style="color:black">{{ cat }}</a>
+                            <a class="nav-item nav-link mmenu-link" href="/categories/?category={{ cat }}">{{ cat }}</a>
                         </li>
                         {% endfor %}     
                     </ul>
-                </div>
-                
+                </div>                
             </nav>
         </div>
     </div>

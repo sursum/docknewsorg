@@ -2,26 +2,35 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 {% include_block page.body %}
-
+{% load user_agents %}
 
 {% block extra_css %}
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
 {% endblock %} 
 
 {% block body_class %}blogpage{% endblock %}
-
 {% block content %}
-<!-- Top and Navbar -->
-<div class="container container-fluid jumbo-container">
-    <div class="jumbotron"></div>
-    {% include 'newsorg/navbar_top.html' %}
-</div>
 <div class="container container-fluid content-body">
-    {# Top row, main area and Side column #}
+    {% if request|is_pc %}
     <div class="row">
-        <div class="col-sm col-md blogpage-col">
-            <article>
-                
+        <div class="container container-fluid jumbo-container">
+            <div class="jumbotron"></div>
+            {% include 'newsorg/navbar_top.html' %}
+        </div>
+    </div>
+    {% endif %}    
+    {% if request|is_mobile %}
+    <div class="row">
+        <div class="navbar-row">     
+          <!-- main Feature and follow up -->
+            {% include 'newsorg/mnavbar_top.html' %}    
+        </div>
+    </div>
+    {% endif %}
+    {# Top row, main area and Side column #}
+    <div class="row blogpage-body">
+        <div class="col-sm col-md">
+            <article>               
                 {% for block in page.body %}
                     
                     {% if block.block_type == 'heading' %}

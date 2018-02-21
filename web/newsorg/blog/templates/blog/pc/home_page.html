@@ -48,7 +48,7 @@
   <!-- Category News container -->
   <div class="col-md side-column">        
       <!-- Category news -->        
-      {% include 'blog/pc/partials/category_news.html' %}
+      {% include 'blog/pc/partials/category_news.html' with carousel_items=self.carousel_items.all only %}
   </div>
 </div>
 {% endblock %}

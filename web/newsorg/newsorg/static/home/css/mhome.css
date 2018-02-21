@@ -1,212 +1,242 @@
-#post-headline {
-    text-transform: capitalize;
-    text-overflow: ellipsis;
+article a {
+	min-height: 100%;
 }
-.scrollingdiv{
-    -webkit-overflow-scrolling: touch; 
+#post-headline {
+	text-transform: capitalize;
+	text-overflow: ellipsis;
+}
+.scrollingdiv {
+	-webkit-overflow-scrolling: touch;
 }
 .container, .container-fluid {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0px;
 }
 .content-body {
-    margin-top: 0px;
-    margin-left: 3px;
-    margin-right: 3px;
-    border-left: 2px solid #4B3296;
-    border-right: 2px solid #4B3296;    
-    padding-top: 0px;  
-    padding-left: 5px;
-    padding-right: 5px;        
+	margin-top: 0px;
+	margin-left: 3px;
+	margin-right: 3px;
+	border-left: 2px solid #4B3296;
+	border-right: 2px solid #4B3296;
+	padding-top: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .mmenu-text {
-    font-size: 0.75em;
-    font-family: -apple-system,BlinkMacSystemFont, "Helvetica Neue",Helvetica,'Fira Sans',"Open Sans",Arial,sans-serif;
+	font-size: 0.75em;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, 'Fira Sans', "Open Sans", Arial, sans-serif;
 }
 .navbar-row {
-    min-height: 44px;
-    margin-bottom: 4px;
+	min-height: 44px;
+	margin-bottom: 4px;
 }
 .homepage-row {
-    margin: 0px;    
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	padding-bottom: 4px;
+	border-bottom: 2px solid orange;
 }
 .main-area {
-    border-right: 2px solid orange;
+	border-right: 2px solid orange;
 }
 .post-row {
-    margin-bottom: 8px;
-    max-height: 120px;
-    border: 1px solid black;
-    box-sizing: border-box;
+	margin-bottom: 8px;
+	max-height: 120px;
+	border: 1px solid black;
+	box-sizing: border-box;
 }
 .mainfeatur-home-col {
-    padding-left: 5px;
-    padding-right: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .second-row-container {
-    margin-bottom: 5px;
-    border-bottom: 2px solid #4B3296;
+	margin-bottom: 5px;
+	border-bottom: 2px solid #4B3296;
 }
 .side-column {
-    padding-left: 0px;
-    padding-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
-
 .annons {
-    padding-top: 10px;
-    padding-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-
 img.homepage-photo {
-    max-width: 100%;   
-    padding-right: 5px; 
+	max-width: 100%;
+	padding-right: 5px;
 }
 .mainfeature-article {
-    display: inline-block;
-    padding-bottom: 5px;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    border-bottom: 2px solid orange;    
+	display: inline-block;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 .mainfeature-post {
-    display: inline-block;
-    margin: 0px;
-    padding: 3px;        
-    overflow-wrap: break-word;
+	display: inline-block;
+	margin: 0px;
+	padding: 3px;
+	overflow-wrap: break-word;
 }
 .mainfeature-post p {
-    margin: 0px;
-    
+	margin: 0px;
+}
+article a p {
+	font-size: 0.725em;
+	padding-left: 4px;
 }
 .mainfeature-cont {
-    padding-left: 0px;
-    padding-right: 0px;    
+	padding-left: 0px;
+	padding-right: 0px;
 }
-.minitrue  {
-    padding-left: 10px;
-    padding-right: 10px;    
-    margin-top: 15px;
+.minitrue {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 4px;
+}
+.minitrue-post {
+	display: inline-block;
+	margin: 0px;
+	padding: 3px;	
 }
 .list-news-container {
-    padding-left: 5px;
-    padding-right: 5px;    
+	padding-left: 0px;
+	padding-right: 0px;
 }
-.list-news-container h3 {    
-    margin-top: 4px;
-    display: block;
-    /*background-color: #4B3296; */
-    text-align: center;
-    text-transform: uppercase;
-    color: #ffffff;
+.list-news-container {
+	margin-top: 4px;
+	display: block;
+	/*background-color: #4B3296; */
+	/* text-align: center;
+    text-transform: uppercase; 
+    color: #ffffff;*/
+}
+#headline>h3 {
+	font-size: 1.8em;
 }
 .list-news-row {
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-top: 3px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #4B3296;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-top: 3px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+	border-bottom: 1px solid #4B3296;
 }
 .list-news-list {
-    padding-bottom: 5px;    
+	padding-bottom: 5px;
 }
-.yflow {    
-    overflow-y: scroll;
+.yflow {
+	height: 80px;
+	overflow-y: scroll;
 }
 .list-news {
-    padding-right: 5px;
-    border-right: 2px solid #4B3296;    
+	padding-right: 5px;
+	border-right: 2px solid #4B3296;
 }
-.list-news-list{
-    list-style-type: none; 
-    max-height: 220px;   
+.list-news-list {
+	list-style-type: none;
+    min-height: 100px;
+    max-height: 160px;
+    margin-top: 4px;
+    padding-top: 3px;
+    border-top: 1px solid #4B3296;
 }
 .list-news-list-item {
-    padding-bottom: 1rem;        
-    padding-top: 0.2rem; 
-    padding-right: 2px;
-    border-top: 0px;    
-    border-bottom: 1px solid orange;          
-    border-left: 0px;
-    border-right: 0px;
-    margin-left:0px;
-    margin-top:0px;
-    margin-bottom:0px;
-    padding-left:2px;     
+    max-height: 80px;
+	padding-bottom: 1rem;
+	padding-top: 0.2rem;
+	padding-right: 2px;
+	border-top: 0px;
+	border-bottom: 1px solid orange;
+	border-left: 0px;
+	border-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 2px;
 }
 .list-news-list-item:last-child {
-    border-bottom: 0px;
+	border-bottom: 0px;
 }
-
 .list-news-list-item img {
-    float: left;
-    padding: 0;
+	float: left;
+	padding-top: 10px;
 }
-.list-news-list-item strong, .list-news-list-item  p {
-    margin-bottom: 0.2rem;
-    overflow-y: auto;            
-    white-space: nowrap;         
-    overflow-x: hidden;
-    text-overflow: ellipsis;        
+.list-news-list-item strong, .list-news-list-item p {
+	margin-bottom: 0.2rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
 }
-
 /* OP-Blog */
+
 .op-blog {
-    padding-left: 5px;
-    padding-right: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 .slide {
-    box-sizing: content-box;
+	box-sizing: content-box;
+}
+#carousel {
+	padding-top: 4px;
 }
 .carousel-image {
-    background-repeat: no-repeat;
-    background-position: center 0px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 /* PUBLISHED FEATURES */
+
 .published-features {
-    padding-top: 5px;
-    padding-left: 0px;
-    padding-right: 0px;
-    
-}
-.published-container {
-    padding-top: 5px;
-    margin-top: 5px;
-    border-top: 2px solid orange; 
+	padding-top: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 .published-row {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 8px;
-    margin-right: 8px;
-    border-bottom: 1px solid #4B3296; 
+	padding-top: 5px;
+	padding-bottom: 10px;
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #4B3296;
 }
-
 /* ********************************************
 *****  BLOG HTML ********
 ********************************************** */
+.category-news {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.cat-index-headline {
+	margin-top: 50px;
+}
 .category-index-li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #4B3296; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #4B3296;
 }
-
-.category-index-col ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+.category-row ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
 }
-
-
+.category-row {
+	margin-left: 4px;
+    margin-right: 4px;
+    padding-bottom: 4px;
+	border-bottom: 2px solid orange;
+}
 .bg-company-red {
-    background-color: darkred;
-  }
+	background-color: darkred;
+}

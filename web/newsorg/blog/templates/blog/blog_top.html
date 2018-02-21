@@ -1,0 +1,18 @@
+
+{% topbar %}
+% if request|is_pc %}
+    <div class="container container-fluid jumbo-container">
+        <div class="jumbotron"></div>
+        {% include 'newsorg/navbar_top.html' %}
+    </div>
+{% endif %}
+
+{% if request|is_mobile %}
+    <div class="row navbar-row">     
+        <!-- main Feature and follow up -->
+        {% include 'newsorg/mnavbar_top.html' %}    
+    </div>
+{% endif %}
+{% endblock %}
+
+

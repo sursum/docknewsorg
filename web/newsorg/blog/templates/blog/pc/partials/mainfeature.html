@@ -14,8 +14,7 @@
                     {% endwith %}
                 </div>
                 <div class="col-md-8 mainfeature-text">
-                    <h3><a href="{% pageurl post %}">{{ post.title }}</a></h3>                    
-                    <p><a href="{% pageurl post %}">{{ post.intro }}</a></p>                
+                    <a href="{% pageurl post %}"><h3>{{ post.title }}</h3><p>{{ post.intro }}</p></a>
                 </div>
             {% endwith %}
         {% endfor %}                
