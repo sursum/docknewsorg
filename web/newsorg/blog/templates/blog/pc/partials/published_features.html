@@ -11,7 +11,7 @@
                 {% if main_image %}         
                     {% image main_image height-180 as tmp_photo %}
                         <img src="{{ tmp_photo.url }}" class="homepage-photo" alt=""/>
-                    {% endif %}
+                {% endif %}
                 {% endwith %}
             </div>
             <div class="col-md-8">

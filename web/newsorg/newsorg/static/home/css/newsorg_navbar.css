@@ -1,4 +1,57 @@
-
+.main-navbar {
+    height: auto;
+    background-color: #4B3296;
+    margin-bottom: 0;
+    display: d-inline-flex ;
+  }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .navbar li {
+    float: left;
+  }
+  /*ul.pull-left.main-menu,*/
+  .main-menu > li,
+  .main-menu > li >  a {
+    height: 100%;
+  }
+  
+  .navbar li a,
+  .menu-text a,
+  .menu-pirate
+    {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  p, .navbar li a {
+    font-size: 0.875em;
+    font-family: -apple-system,BlinkMacSystemFont, "Helvetica Neue",Helvetica,'Fira Sans',"Open Sans",Arial,sans-serif;
+  }
+  .navbar .col-md-5, .main-menu, .menu-row {
+    vertical-align: middle;
+    line-height: 1em;
+  }
+  .navbar-buc .btn {
+    color: #f3f3f3;
+  }
+  .menu-main-cat {
+    vertical-align: middle;
+    margin-top: 5px;
+  }
+  .main-menu li a:hover,
+  a:hover.menu-text {
+    color: orange;
+    background-color: #111;
+  }
+  
 /* ==================================================
   Mobile device navbar
 ================================================== */
@@ -33,7 +86,7 @@ a.nav-link.nav-item.mmenu-link,
 .nav-butt {
     border-color: orange;
 }
-.navbar { 
+.mnavbar { 
     display: flex;  
  }
 .navbar {

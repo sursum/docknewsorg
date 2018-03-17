@@ -26,6 +26,8 @@ a.link, a:visited, a:hover, a:active  {
   text-transform: capitalize;
 }
 .jumbo-container {
+  margin: 0px;
+  width: 100%;
   padding-top: 0px;
   padding-bottom: 10px; 
   padding-left: 0px;
@@ -60,57 +62,13 @@ a.link, a:visited, a:hover, a:active  {
 }
 
 /* ==================================================
-Regions
+MENU
 ================================================== */
-.main-navbar {
-  max-height: 70px;
-  min-height: 50px;
-  background-color: #4B3296;
-  margin-bottom: 0;
-  
-}
-.navbar-header {
-  display: inline;
-}
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.navbar li {
-  float: left;
-}
-
-.navbar li a,
-a.menu-pp-text {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 5px 5px;
-  text-decoration: none;
-  display: inline-block;
-}
-p, .navbar li a {
-  font-size: 0.875em;
-  font-family: -apple-system,BlinkMacSystemFont, "Helvetica Neue",Helvetica,'Fira Sans',"Open Sans",Arial,sans-serif;
-}
-.navbar .col-md-5, .main-menu {
-  vertical-align: middle;
-  line-height: 1em;
-  padding-top: 0.5em;
-}
 /* Change the link color to #111 (black) on hover */
 .blogpage-categories li a:hover,
-.main-menu li a:hover,
-a:hover.menu-pp-text,
 a:hover.block-articleIP  {
   color: orange;
   background-color: #111;
-}
-.navbar-buc .btn {
-  color: #f3f3f3;
 }
 .jumbotron-buc {
   background-color: #EBE1F9;
@@ -165,8 +123,13 @@ body, a {
 }
 .main-navbar .row {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
-
+.main-navbar > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
 .demos .demo:last-child {
   border-bottom: none;
   padding-bottom: 0;
