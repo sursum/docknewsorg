@@ -6,7 +6,7 @@
     {% for post in published_media %}
         {% with post=post.specific %}
         <div class="row published-row">                       
-            <div class="col-md-4">
+            <div class="col-md-4 published-image-wrapper">
                 {% with post.main_image as main_image %}
                 {% if main_image %}         
                     {% image main_image height-180 as tmp_photo %}

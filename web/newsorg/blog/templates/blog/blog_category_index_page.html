@@ -27,35 +27,31 @@
     </div>
     {% endif %}
 
-    <div class="row category-row">
+    <div class="row category-row-title">
         <div class="col-md"> 
             {% if request.GET.category|length %}
                 <h4>Visar artiklar i kategorin "{{ request.GET.category }}"</h4>
             {% endif %}
         </div>
     </div>
-    <div class="row category-row">        
-        <div class="col-sm">                
-            <ul class="list-group">                        
-                {% for blogpage in blogpages %}
-                {% with post=post.specific %}                
-                <li class="category-index-li">
-                    <article>
-                        <a href="{% pageurl blogpage %}">
-                            {% with blogpage.main_image as main_image %}
-                                {% if main_image %}
-                                    {% image main_image fill-160x100 as tmp_photo %}
-                                    <img class="img-fluid" src="{{ tmp_photo.url }}"/>
-                                {% endif %}
-                            {% endwith %}
-                            <strong style="text-align: center">{{ blogpage.title }}</strong>
-                            <p>{{ blogpage.intro }}</p>
-                        </a>
-                    </article>
-                </li>                
-                {% endwith %}
-                {% endfor %}
-            </ul>     
-        </div>
+    {% for blogpage in blogpages %}
+    {% with post=blogpage.specific %}   
+    <div class="row category-row">                       
+        {% with blogpage.main_image as main_image %}
+        {% if main_image %}         
+            {% image main_image height-180 as tmp_photo %}
+            <div class="col-md-4 published-image-wrapper">        
+                <img src="{{ tmp_photo.url }}" class="homepage-photo" alt=""/>
+            </div>
+            {% endif %}
+            {% endwith %}        
+        <div class="col-md">
+            <a class="inline-block" href="{% pageurl blogpage %}">
+                <h2>{{ blogpage.title }}</h2>
+                <p>{{ blogpage.intro }}</p>                
+            </a>
+        </div>            
     </div>
+    {% endwith %}
+    {% endfor %}
 {% endblock %}

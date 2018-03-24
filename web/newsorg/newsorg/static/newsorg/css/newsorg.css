@@ -15,10 +15,6 @@
 a.link, a:visited, a:hover, a:active  {
   color: black;
 }
-
-.base {
-  border: 1px solid black;
-}
 #headline {
   background: #4B3296;
   color: white;
@@ -26,7 +22,10 @@ a.link, a:visited, a:hover, a:active  {
   text-transform: capitalize;
 }
 .jumbo-container {
-  margin: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 4px;
   width: 100%;
   padding-top: 0px;
   padding-bottom: 10px; 
@@ -215,7 +214,7 @@ img#navbar-not-sticky-logo{
 
 ================================================== */
 header {
-    padding: 154px 0 100px;
+    padding: 154px 0 100px;    
   }
   
   @media (min-width: 992px) {

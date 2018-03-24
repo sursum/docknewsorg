@@ -231,11 +231,16 @@ article a p {
 	margin: 0px;
 	padding: 0px;
 }
-.category-row {
+.category-row, .category-row-title {
 	margin-left: 4px;
     margin-right: 4px;
-    padding-bottom: 4px;
+    margin-bottom: 4px;
+	margin-top: 4px;
+	padding-bottom: 4px;
 	border-bottom: 2px solid orange;
+}
+.category-row-title {
+	margin-top: 4px;
 }
 .bg-company-red {
 	background-color: darkred;
