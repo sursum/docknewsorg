@@ -89,7 +89,7 @@ class BlogCategoryIndexPage(Page):
         else:
             context = super(BlogCategoryIndexPage, self).get_context(request)        
             context['category_names'] = categories
-        print(context)
+        #print(context)
         return context
 
 class BlogTagIndexPage(Page):
@@ -123,10 +123,11 @@ class BlogPage(Page):
     authors = models.CharField(max_length=255, default="Buckanjären")
             
     def main_image(self):
-        gallery_item = self.gallery_images.first()
+        gallery_item = self.gallery_images.first()        
         if gallery_item:
             return gallery_item.image
         else:
+            print("--- no image")
             return None
 
     search_fields = Page.search_fields + [
@@ -320,36 +321,57 @@ class HomePage(Page):
 
     ]
 
+    # def get_context(self, request):
+    #     # Get the published blogs        
+    #     blogs = BlogPage.objects.live().order_by('-first_published_at')
+    #     print(blogs)
+    #     # filter by tags
+    #     main_feature_article = blogs.filter(tags__name='main') #Make sure only one! query_set mainfeature article        
+    #     minitrue = blogs.filter(tags__name='minitrue') #query_set minitrue
+    #     published_media = blogs.filter(tags__name='feature') #query_set published_media
+    #     opinion = blogs.filter(categories__name='Opinion') #query_set opinion-carousell
+    #     cat_pol = blogs.filter(categories__name='Politik') #query_set cat_pol
+    #     cat_econ = blogs.filter(categories__name='Ekonomi') #query_set cat_econ
+    #     cat_cult = blogs.filter(categories__name='Kultur') #query_set cat_cult
+    #     cat_sci = blogs.filter(categories__name='Vetenskap') #query_set cat_sci
+    #     cat_health = blogs.filter(categories__name='Hälsa') #query_set cat_health
+    #     dockyard = blogs.filter(tags__name='Dockyard') #query_set dockyard
+    #     #print(main_feature_article)
+
+    #     # Update template context
+    #     context = super(HomePage, self).get_context(request)
+    #     context['main_feature_article'] = main_feature_article
+    #     context['minitrue'] = minitrue
+    #     context['published_media'] = published_media
+    #     context['opinion'] = opinion
+    #     context['cat_pol'] = cat_pol
+    #     context['cat_econ'] = cat_econ
+    #     context['cat_cult'] = cat_cult
+    #     context['cat_sci'] = cat_sci
+    #     context['cat_health'] = cat_health
+    #     context['dockyard'] = dockyard
+
+    #     return context
+
     def get_context(self, request):
         # Get the published blogs        
         blogs = BlogPage.objects.live().order_by('-first_published_at')
-        print(blogs)
-        # filter by tags
-        main_feature_article = blogs.filter(tags__name='main') #Make sure only one! query_set mainfeature article        
-        minitrue = blogs.filter(tags__name='minitrue') #query_set minitrue
-        published_media = blogs.filter(tags__name='feature') #query_set published_media
-        opinion = blogs.filter(categories__name='Opinion') #query_set opinion-carousell
-        cat_pol = blogs.filter(categories__name='Politik') #query_set cat_pol
-        cat_econ = blogs.filter(categories__name='Ekonomi') #query_set cat_econ
-        cat_cult = blogs.filter(categories__name='Kultur') #query_set cat_cult
-        cat_sci = blogs.filter(categories__name='Vetenskap') #query_set cat_sci
-        cat_health = blogs.filter(categories__name='Hälsa') #query_set cat_health
-        dockyard = blogs.filter(tags__name='Dockyard') #query_set dockyard
-        #print(main_feature_article)
-
-        # Update template context
+        #print(blogs)
+        # get categories
+        categories = BlogCategoryIndexPage.get_categories(self)
+        
+        
+        # filter by tags        
         context = super(HomePage, self).get_context(request)
-        context['main_feature_article'] = main_feature_article
-        context['minitrue'] = minitrue
-        context['published_media'] = published_media
-        context['opinion'] = opinion
-        context['cat_pol'] = cat_pol
-        context['cat_econ'] = cat_econ
-        context['cat_cult'] = cat_cult
-        context['cat_sci'] = cat_sci
-        context['cat_health'] = cat_health
-        context['dockyard'] = dockyard
-
+        context['main_feature_article'] = blogs.filter(tags__name='main') #Make sure only one! query_set mainfeature article
+        context['minitrue'] =  blogs.filter(tags__name='minitrue') #query_set minitrue
+        context['published_media'] =  blogs.filter(tags__name='feature') #query_set published_media
+        
+        # filter by categories
+        for cat in categories:
+            context[cat] = blogs.filter(categories__name=cat)
+            #print(main_feature_article)
+                
         return context
 
     
