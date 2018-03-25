@@ -6,7 +6,7 @@ from django.utils import timezone
 from wagtail.wagtailcore import blocks
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase
+from taggit.models import TaggedItemBase, Tag as TaggitTag
 
 from wagtail.wagtailcore.models import Page, Orderable
 from wagtail.wagtailcore.fields import RichTextField, StreamField
@@ -30,6 +30,11 @@ class PersonBlock(blocks.StructBlock):
 
     class Meta:
         icon = 'user'
+
+@register_snippet
+class Tag(TaggitTag):
+    class Meta:
+        proxy = True
 
 @register_snippet
 class BlogCategory(models.Model):
@@ -95,10 +100,12 @@ class BlogCategoryIndexPage(Page):
 class BlogTagIndexPage(Page):
     
     def get_context(self, request):
-
+        print(request)
         # Filter by tag
         tag = request.GET.get('tag')
         blogpages = BlogPage.objects.filter(tags__name=tag)
+        print(tag)
+        print(blogpages)
 
         # Update template context
         context = super(BlogTagIndexPage, self).get_context(request)
@@ -319,39 +326,7 @@ class HomePage(Page):
         InlinePanel('carousel_items', label="Carousel items"),
         InlinePanel('related_links', label="Related links"),
 
-    ]
-
-    # def get_context(self, request):
-    #     # Get the published blogs        
-    #     blogs = BlogPage.objects.live().order_by('-first_published_at')
-    #     print(blogs)
-    #     # filter by tags
-    #     main_feature_article = blogs.filter(tags__name='main') #Make sure only one! query_set mainfeature article        
-    #     minitrue = blogs.filter(tags__name='minitrue') #query_set minitrue
-    #     published_media = blogs.filter(tags__name='feature') #query_set published_media
-    #     opinion = blogs.filter(categories__name='Opinion') #query_set opinion-carousell
-    #     cat_pol = blogs.filter(categories__name='Politik') #query_set cat_pol
-    #     cat_econ = blogs.filter(categories__name='Ekonomi') #query_set cat_econ
-    #     cat_cult = blogs.filter(categories__name='Kultur') #query_set cat_cult
-    #     cat_sci = blogs.filter(categories__name='Vetenskap') #query_set cat_sci
-    #     cat_health = blogs.filter(categories__name='Hälsa') #query_set cat_health
-    #     dockyard = blogs.filter(tags__name='Dockyard') #query_set dockyard
-    #     #print(main_feature_article)
-
-    #     # Update template context
-    #     context = super(HomePage, self).get_context(request)
-    #     context['main_feature_article'] = main_feature_article
-    #     context['minitrue'] = minitrue
-    #     context['published_media'] = published_media
-    #     context['opinion'] = opinion
-    #     context['cat_pol'] = cat_pol
-    #     context['cat_econ'] = cat_econ
-    #     context['cat_cult'] = cat_cult
-    #     context['cat_sci'] = cat_sci
-    #     context['cat_health'] = cat_health
-    #     context['dockyard'] = dockyard
-
-    #     return context
+    ]    
 
     def get_context(self, request):
         # Get the published blogs        

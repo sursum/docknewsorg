@@ -1,24 +1,61 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+{% load user_agents %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/mhome.css' %}">
+{% endblock %} 
 
 {% block content %}
-
-    {% if request.GET.tag|length %}
-        <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
+    <!-- Top and Navbar -->
+    {% if request|is_pc %}
+    <div class="container container-fluid jumbo-container">
+        <div class="jumbotron"></div>
+        {% include 'newsorg/navbar_top.html' %}
+    </div>    
     {% endif %}
 
+    {% if request|is_mobile %}
+    <div class="row navbar-row">     
+            <!-- main Feature and follow up -->
+            {% include 'newsorg/mnavbar_top.html' %}    
+    </div>
+    {% endif %}
+
+    {% if request.GET.tags|length %}
+        <h4>{{ request.GET.tag }}</h4>
+    {% endif %}
+
+    <div class="tags">
+        <h3>Tags</h3>
+        {% for tag in page.tags.all %}
+            <button type="button">{{ tag }}</button>
+        {% endfor %}
+    </div>
+    
     {% for blogpage in blogpages %}
-
-          <p>
-              <strong><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a></strong><br />
-              <small>Revised: {{ blogpage.latest_revision_created_at }}</small><br />
-              {% if blogpage.author %}
-                <p>By {{ blogpage.author.profile }}</p>
-              {% endif %}
-          </p>
-
+    {% with post=blogpage.specific %}   
+    <div class="row category-row">                       
+        {% with blogpage.main_image as main_image %}
+        {% if main_image %}         
+            {% image main_image height-180 as tmp_photo %}
+            <div class="col-md-4 published-image-wrapper">        
+                <img src="{{ tmp_photo.url }}" class="homepage-photo" alt=""/>
+            </div>
+            {% endif %}
+            {% endwith %}        
+        <div class="col-md">
+            <a class="inline-block" href="{% pageurl blogpage %}">
+                <h2>{{ blogpage.title }}</h2>
+                <p>{{ blogpage.intro }}</p>                
+            </a>
+        </div>            
+    </div>
+    {% endwith %}
     {% empty %}
         No pages found with that tag.
-    {% endfor %}
 
+    {% endfor %}    
 {% endblock %}
