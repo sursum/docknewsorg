@@ -3,55 +3,89 @@
     background-color: #4B3296;
     margin-bottom: 0;
     display: d-inline-flex ;
-  }
-  .navbar ul {
+}
+.navbar ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0px 16px;
     overflow: hidden;
-  }
-  
-  .navbar li {
+}
+
+.navbar li {
     float: left;
-  }
-  /*ul.pull-left.main-menu,*/
-  .main-menu > li,
-  .main-menu > li >  a {
+}
+/*ul.pull-left.main-menu,*/
+.main-menu > li,
+.main-menu > li >  a {
     height: 100%;
-  }
-  
-  .navbar li a,
-  .menu-text a,
-  .menu-pirate
-    {
+}
+
+.navbar li a,
+.menu-pirate
+{
     display: block;
     color: white;
     text-align: center;
     padding: 5px 5px;
     text-decoration: none;
     display: inline-block;
-  }
-  p, .navbar li a {
+}
+.navbar li a {
     font-size: 0.875em;
     font-family: -apple-system,BlinkMacSystemFont, "Helvetica Neue",Helvetica,'Fira Sans',"Open Sans",Arial,sans-serif;
-  }
-  .navbar .col-md-5, .main-menu, .menu-row {
+}
+.navbar .col-md-5, .main-menu, .menu-row {
     vertical-align: middle;
     line-height: 1em;
-  }
-  .navbar-buc .btn {
+}
+.navbar-buc .btn {
     color: #f3f3f3;
-  }
-  .menu-main-cat {
+}
+.menu-main-cat {
     vertical-align: middle;
     margin-top: 5px;
-  }
-  .main-menu li a:hover,
-  a:hover.menu-text {
+}
+.main-menu li a:hover,
+a:hover.menu-text {
     color: orange;
     background-color: #111;
-  }
-  
+}
+.piratephilo-container {
+    padding-top: 2rem;    
+}
+.piratephilo {
+    font-family: 'Tangerine', cursive;    
+    color: bisque;
+}
+.piratephilo-link {
+    font-size: 2em;
+    font-weight:lighter;
+    line-height: normal;
+    padding-top: 0.4rem;
+    padding-bottom: 0rem;
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+.piratephilo-title {
+    font-size: 2.25em;
+    line-height: 1.3;
+    text-align: center;
+    max-width: 100%;
+}  
+.piratephilo-quote,
+.piratephilo-quote > p  {    
+    font-size: 2em;
+    line-height: 0.8rem;
+}
+.piratephilo-quote-by {    
+    font-size: 1.8em;
+    line-height: normal;
+    text-align: right;
+}  
+.piratephilo-nav {
+    display: inline-block;
+    max-width: 100%;
+}
 /* ==================================================
   Mobile device navbar
 ================================================== */

@@ -1,0 +1,18 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load categories %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/newsorg_navbar.css' %}">
+{% endblock %} 
+
+<div class="container-fluid"> <!-- this is to make it responsive to your screen with overide in css: .mainfeature-container -->               
+    <div class="row">
+        <div class="col-md piratephilo-container">
+            {% random_quote as q %}
+            <div class="piratephilo piratephilo-title">{{ q.title }}</div>
+            <div class="piratephilo piratephilo-quote">{{ q.quote|richtext }}</div>
+            <div class="piratephilo piratephilo-quote-by">&ndash; {{ q.by }}</div>            
+        </div>
+    </div>    
+</div>

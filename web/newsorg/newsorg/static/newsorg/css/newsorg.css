@@ -46,7 +46,8 @@ a.link, a:visited, a:hover, a:active  {
   background-size: 100% 100%;
   min-height: 230px;
   margin-bottom: 0px; 
-  padding: 0px 15px;         
+  padding: 0px 15px;   
+  display: flex;      
 } 
 .mjumbotron{    
   background: url("../images/bucmain-mFULL.jpg") no-repeat center center;
@@ -72,9 +73,26 @@ a:hover.block-articleIP  {
 .jumbotron-buc {
   background-color: #EBE1F9;
 }
+.jumbotron-quote {  
+  width: 100%;
+  display: flex;      
+}
+.indep-row {
+  padding-bottom: 1.8rem;
+  padding-right: 1.5rem;
+}
+.indep-text {
+  text-align: right;
+  width: 100%;
+  font-family: 'Tangerine', cursive;    
+  color: #F5AD5B;
+  font-size: 2.25em;
+  line-height: 1.3;
+}
 .content {
   padding: 3em 0;
 }
+
 .footer {
   border-top: 3px solid #D4CCDB;
   padding: 1.5em 0;
