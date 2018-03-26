@@ -1,0 +1,26 @@
+{% load wagtailcore_tags %}
+{% load categories %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/newsorg_navbar.css' %}">
+{% endblock %} 
+
+<div class="jumbotron">
+    <div class="row jumbotron-quote">
+        <div class="col-md-8 jumbotron-quote"> <!-- Main area -->        
+        <div class="row indep-row jumbotron-quote align-self-end">
+            <div class="col-md-6 jumbotron-quote indep-col">
+            </div>
+            <div class="col-md-6 indep-col jumbotron-quote align-self-end">
+            <span class="indep-text">oberoende pirat ...</span>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3 jumbotron-quote"> <!-- Quote area -->
+        {% include 'blog/buc_quote.html' %}       
+        </div>
+        <div class="col-md-1 jumbotron-quote"> <!-- Quote area -->          
+        </div>
+    </div>
+</div>

@@ -24,32 +24,28 @@
     </div>
     {% endif %}
 
-    {% if request.GET.tags|length %}
-        <h4>{{ request.GET.tag }}</h4>
-    {% endif %}
-
-    <div class="tags">
-        <h3>Tags</h3>
-        {% for tag in page.tags.all %}
-            <button type="button">{{ tag }}</button>
-        {% endfor %}
+    <div class="row tagindexpage-row">                       
+        <div class="col-md piratephilo-indexpage">
+            <div class="piratephilo-indexpage-title" style="text-align:center">{{ page.title }}</div>
+            <div class="piratephilo-indexpage-intro" style="text-align:center">{{ page.intro }}</div>
+        </div>
     </div>
     
     {% for blogpage in blogpages %}
-    {% with post=blogpage.specific %}   
-    <div class="row category-row">                       
+    {% with post=blogpage.specific %}       
+    <div class="row tagindexpage-row">                       
         {% with blogpage.main_image as main_image %}
         {% if main_image %}         
-            {% image main_image height-180 as tmp_photo %}
-            <div class="col-md-4 published-image-wrapper">        
+            {% image main_image width-600 as tmp_photo %}
+            <div class="col-md-4 piratphilo-image-wrapper">        
                 <img src="{{ tmp_photo.url }}" class="homepage-photo" alt=""/>
             </div>
             {% endif %}
             {% endwith %}        
-        <div class="col-md">
+        <div class="col-md tagindexpage-col">
             <a class="inline-block" href="{% pageurl blogpage %}">
                 <h2>{{ blogpage.title }}</h2>
-                <p>{{ blogpage.intro }}</p>                
+                <p>{{ blogpage.intro }}</p>                                
             </a>
         </div>            
     </div>

@@ -27,13 +27,13 @@
     </div>
     {% endif %}
 
-    <div class="row category-row-title">
-        <div class="col-md"> 
-            {% if request.GET.category|length %}
-                <h4>Visar artiklar i kategorin "{{ request.GET.category }}"</h4>
-            {% endif %}
+    <div class="row tagindexpage-row">                       
+        <div class="col-md ">            
+            <div class="cat-indexpage-title" style="text-align:center">{{ request.GET.category }}</div>
+            <div class="cat-indexpage-intro" style="text-align:center">{{ page.intro }} {{ request.GET.category }}</div>
         </div>
     </div>
+
     {% for blogpage in blogpages %}
     {% with post=blogpage.specific %}   
     <div class="row category-row">                       
@@ -43,8 +43,8 @@
             <div class="col-md-4 published-image-wrapper">        
                 <img src="{{ tmp_photo.url }}" class="homepage-photo" alt=""/>
             </div>
-            {% endif %}
-            {% endwith %}        
+        {% endif %}
+        {% endwith %}        
         <div class="col-md">
             <a class="inline-block" href="{% pageurl blogpage %}">
                 <h2>{{ blogpage.title }}</h2>

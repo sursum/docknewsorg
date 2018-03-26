@@ -61,6 +61,42 @@ a.link, a:visited, a:hover, a:active  {
   border-radius: 0px;
 }
 
+.tagindexpage-row, .tagindexpage-row-title {
+  display: flex;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+	margin-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 2px solid orange;
+}
+.tagindexpage-row-title {
+	margin-top: 4px;
+}
+.piratphilo-image-wrapper {	
+  display: flex;
+	padding-right: 0px;
+  padding-left: 0px;
+  max-height: 300px 
+}
+
+.piratephilo-indexpage {
+  font-family: 'Tangerine', cursive;    
+  color: black;
+}
+.piratephilo-indexpage-title,
+.cat-indexpage-title {
+  font-size: 3.5em;
+  line-height: 3.5rem;
+}
+.piratephilo-indexpage-intro,
+.cat-indexpage-intro {
+  font-size: 2em;
+  line-height: 2rem;
+}
+
+
+
 /* ==================================================
 MENU
 ================================================== */
@@ -75,14 +111,20 @@ a:hover.block-articleIP  {
 }
 .jumbotron-quote {  
   width: 100%;
-  display: flex;      
+  display: flex; 
+  padding: 0px;     
 }
 .indep-row {
-  padding-bottom: 1.8rem;
-  padding-right: 1.5rem;
+  padding-bottom: 0rem;
+  padding-right: 0rem;
+}
+.indep-col {
+  padding-bottom: 0rem;
+  padding-right: 0rem;
 }
 .indep-text {
   text-align: right;
+  vertical-align: bottom;
   width: 100%;
   font-family: 'Tangerine', cursive;    
   color: #F5AD5B;
@@ -289,7 +331,10 @@ a:hover {
   display: inline;
   text-align: right;
 }
-
+.blogpage-photo {
+  align-content: left;
+  width: 100%
+}
 /********************************************
 rich-text wrapping text around image
 ********************************************/

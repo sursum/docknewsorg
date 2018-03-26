@@ -61,7 +61,7 @@ class BlogIndexPage(Page):
         return context
 
 class BlogCategoryIndexPage(Page):
-    intro = RichTextField(blank=True)
+    intro = models.CharField(max_length=300, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
@@ -89,19 +89,21 @@ class BlogCategoryIndexPage(Page):
         return context
 
 class BlogTagIndexPage(Page):
-    
-    def get_context(self, request):
-        print(request)
+    intro = models.CharField(max_length=300, blank=True)
+
+    def get_context(self, request):        
         # Filter by tag
         tag = request.GET.get('tag')
-        blogpages = BlogPage.objects.filter(tags__name=tag)
-        print(tag)
-        print(blogpages)
+        blogpages = BlogPage.objects.filter(tags__name=tag)  
 
         # Update template context
         context = super(BlogTagIndexPage, self).get_context(request)
         context['blogpages'] = blogpages
         return context
+
+    content_panels = Page.content_panels + [
+        FieldPanel('intro'),
+    ]
 
 class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey('BlogPage', related_name='tagged_items')

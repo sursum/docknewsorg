@@ -28,11 +28,19 @@
     </div>
     {% endif %}
     {# Top row, main area and Side column #}
-    <div class="row blogpage-body">
+    <div class="row blogpage-body blogpage-row">        
+        {% with page.main_image as main_image %}
+        {% if main_image %}         
+        {% image main_image height-300 as tmp_photo %}        
+            <div class="col-sm-3 col-md-3 piratphilo-image-wrapper">
+                <img src="{{ tmp_photo.url }}" class="blogpage-photo" alt=""/>        
+            </div>
+        {% endif %}
+        {% endwith %}      
+    
         <div class="col-sm col-md">
-            <article>               
-                {% for block in page.body %}
-                    
+            <article>                   
+                {% for block in page.body %}                    
                     {% if block.block_type == 'heading' %}
                         <h1>{{ block.value }}</h1>
                     {% elif block.block_type == 'image' %}

@@ -74,8 +74,8 @@ a:hover.menu-text {
 }  
 .piratephilo-quote,
 .piratephilo-quote > p  {    
-    font-size: 2em;
-    line-height: 0.8rem;
+    font-size: 1.8em;
+    line-height: 1.5rem;
 }
 .piratephilo-quote-by {    
     font-size: 1.8em;
@@ -86,6 +86,7 @@ a:hover.menu-text {
     display: inline-block;
     max-width: 100%;
 }
+
 /* ==================================================
   Mobile device navbar
 ================================================== */

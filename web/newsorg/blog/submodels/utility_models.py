@@ -81,7 +81,7 @@ class Quote(models.Model):
 
     content_panels = [
         FieldPanel('title'),
-        FieldPanel('quote', classname="full"),
+        FieldPanel('quote'),
         FieldPanel('by'),        
     ]
     
