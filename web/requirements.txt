@@ -44,7 +44,7 @@ Unidecode==0.4.21
 urllib3==1.22
 user-agents==1.1.0
 w3lib==1.18.0
-wagtail==1.12.2
+wagtail==2.11.8
 webencodings==0.5.1
 Willow==0.4
 zope.interface==4.4.3
